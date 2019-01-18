@@ -16,13 +16,18 @@ $(document).ready(function () {
 
 
     let ailment = $('#ailment').val();
-    let newSearch = new SearchMovie();
+    let newSearch = new SearchDocs();
     let promise = newSearch.GetByAilment(ailment);
 
     promise.then(function (response) {
       let body = JSON.parse(response);
-      for (let i = 0; i < body.results.length; i++) {
-        $("#name").append(`<li id= ${body.results[i].id}>${body.results[i].name}</li>`);
+      console.log(body);
+      for (let i = 0; i < body.data.length; i++) {
+        let docMiddleName = body.data[i].profile.middle_name;
+        if (docMiddleName===undefined){
+          docMiddleName = '';
+        } 
+        $("#name").append(`<li id= ${body.data[i].npi}> ${body.data[i].profile.first_name} ${docMiddleName} ${body.data[i].profile.last_name}</li>`);
       }
       // $("li").click(function (event) {
       //   event.preventDefault();
