@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DocSearch</title>
+</head>
+
+<body>
+  <div class="container" id="main">
+    <img id="tvicon" src="" alt="">
+    <h1>DocSearch</h1>
+    <div class="row">
+      <div class="form">
+        <form class="form-group" id="userForm">
+          <label for="ailment">Find doctors for your ailment: </label>
+          <input class="form-control col" id="ailment" type="text">
+          <button type="submit" class="btn btn-primary btn-lg" id="submitButton">Find Docs</button>
+          <button class="btn btn-primary btn-lg" id="randomButton">Random</button>
+      </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <ul id="name" class="col col-md-3"></ul>
+      <div class="container col col-md-8" id="details">
+      </div>
+    </div>
+    <p id="errors"></p>
+
+  </div>
+</body>
+
+</html>
