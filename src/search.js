@@ -3,7 +3,7 @@ var apiKey = process.env.apiKey;
 export class SearchDocs {
 
   
-  GetByName(name) {
+  GetByDocName(name) {
     return new Promise((resolve, reject) => {
       let request = new XMLHttpRequest();
       let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=45.512%2C-122.658%2C100&user_location=45.512%2C-122.658&sort=distance-asc&skip=0&limit=15&user_key=${apiKey}`;
@@ -13,7 +13,7 @@ export class SearchDocs {
         } else {
           reject(Error(request.statusText));
         }
-      }
+      };
       request.open("GET", url, true);
       request.send();
     });
@@ -30,10 +30,10 @@ export class SearchDocs {
         } else {
           reject(Error(request.statusText));
         }
-      }
+      };
       request.open("GET", url, true);
       request.send();
-    })
+    });
   }
 }
   // GetDetails(id) {
