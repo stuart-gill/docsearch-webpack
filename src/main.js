@@ -20,7 +20,6 @@ $(document).ready(function () {
 
     promise.then(function (response) {
       let body = JSON.parse(response);
-      console.log(body);
       if (body.data.length===0){
         $("#name").append('No doctors match your criteria');
       }
@@ -43,8 +42,6 @@ $(document).ready(function () {
         if (docMiddleName === undefined) {
           docMiddleName = '';
         }
-        console.log(id);
-        console.log(docMiddleName);
         $("#details").append(`<h4> ${body.data[id].profile.first_name} ${docMiddleName} ${body.data[id].profile.last_name}</h4>`);
         $("#details").append(`<img class='img-thumbnail' src='${body.data[id].profile.image_url}' alt = 'pic'>`);
         $("#details").append(`<p>Phone Number: ${body.data[id].practices[0].phones[0].number}</p>`);
@@ -63,7 +60,6 @@ $(document).ready(function () {
         let promise = newSearch.GetByDocName(docName);
         promise.then(function (response) {
           let body = JSON.parse(response);
-          console.log(body);
           if (body.data.length===0){
             $("#name").append('No doctors match your criteria, please try again!');
           }
@@ -87,8 +83,7 @@ $(document).ready(function () {
             if (docMiddleName === undefined) {
               docMiddleName = '';
             }
-            console.log(id);
-            console.log(docMiddleName);
+
             $("#details").append(`<h4> ${body.data[id].profile.first_name} ${docMiddleName} ${body.data[id].profile.last_name}</h4>`);
             $("#details").append(`<img class='img-thumbnail' src='${body.data[id].profile.image_url}' alt = 'pic'>`);
             $("#details").append(`<p>Phone Number: ${body.data[id].practices[0].phones[0].number}</p>`);

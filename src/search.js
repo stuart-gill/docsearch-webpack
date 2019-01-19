@@ -1,5 +1,5 @@
-// import { apiKey } from '../.env';
-var apiKey = process.env.apiKey;
+
+var apiKey = process.env.exports.apiKey;
 export class SearchDocs {
 
   
@@ -12,6 +12,7 @@ export class SearchDocs {
           resolve(request.response);
         } else {
           reject(Error(request.statusText));
+          alert('There was an error with the API request, please try again');
         }
       };
       request.open("GET", url, true);
@@ -29,6 +30,7 @@ export class SearchDocs {
           resolve(request.response);
         } else {
           reject(Error(request.statusText));
+          alert('There was an error with the API request, please try again');
         }
       };
       request.open("GET", url, true);
@@ -36,20 +38,6 @@ export class SearchDocs {
     });
   }
 }
-  // GetDetails(id) {
-  //   return new Promise((resolve, reject) => {
-  //     let request = new XMLHttpRequest();
-  //     let url = `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=en-US`;
-  //     request.onload = function () {
-  //       if (this.status === 200) {
-  //         resolve(request.response);
-  //       } else {
-  //         reject(Error(request.statusText));
-  //       }
-  //     }
-  //     request.open("GET", url, true);
-  //     request.send();
-  //   });
-  // }
+
 
 
