@@ -21,6 +21,7 @@ This is a program that allows the user to enter either an ailment or a doctor na
 - Download or clone this repository
 - Navigate to the project folder in the command line
 - From the command line: Enter _npm install_  then _npm run start_ after install has completed. This will spin up a chrome browser. 
+- Go to developer.betterdoctor.com and request your own API key
 - Create an .env file in the project directory and type the following: "exports.apiKey = [YOUR API KEY HERE]"
 - You can view your results by right clicking, choosing "inspect", and checking the console. 
 - To run tests, enter _npm test_ in the command line. 
